@@ -3,7 +3,29 @@
 -Create React App
 -Configured TailwindCSS
 -Header
+-Routing App
 -Login Form
+-Sign Up Form
+-Form Validation
+-useRef Hook
+-Firebase Setup
+-Deploying our app to production
+-Create SignUp User Account
+-Implement Sign In User API
+-Created Redux Store with userSlice
+-Bugfix : Sign up user displayName and profile picture update
+-BugFix: if the user is not logged in Redirect /browse to login page and vice-versa 
+-Unsubscribed to the onAuthStateChanged
+-Add hardcoded values to the constant file
+-Get data from TMDB now playing movies list API
+-Custom Hook fro now playing movies
+-Create movieSlice
+-Update Store with movie data
+-Planning for MainContainer & secondary container
+-Fetch Data for Trailer Video
+-Update Store with Trailer Video Data
+-Embedded the Youtube  Video and make it autoPlay and mute
+-Tailwind classes to make Main Container look awesome
 
 
 

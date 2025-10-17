@@ -6,9 +6,9 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>   this will make run everything 2 times. It happens only in developer mode and not in production
     <App />
-  </React.StrictMode>
+//  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
