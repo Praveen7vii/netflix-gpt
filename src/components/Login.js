@@ -6,7 +6,7 @@ import { createUserWithEmailAndPassword,signInWithEmailAndPassword, updateProfil
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/UserSlice';
-import { USER_AVTR } from '../utils/Constants';
+import { BG_URL, USER_AVTR } from '../utils/Constants';
 
 const Login = () => {
 
@@ -26,11 +26,7 @@ const Login = () => {
   };
 
   const handleButtonClick = () => {
-    //validate the form data
-
-    // console.log(email.current.value);
-    // console.log(password.current.value);
-    
+    //validate the form data    
     const message = checkValidData(email.current.value, password.current.value);
     setErrorMessage(message);
     if(message) return; // if there is msg then it means there is error and return no signup/ sign in
@@ -45,7 +41,6 @@ const Login = () => {
         password.current.value)
         .then((userCredential) => {
         const user = userCredential.user;
-        // console.log("Name input value:", name.current.value);
           updateProfile(user,{
             displayName:name.current.value,
             photoURL:USER_AVTR
@@ -67,7 +62,6 @@ const Login = () => {
       .catch((error) => {
         console.error("Login error:", error.message);
         const errorCode = error.code;
-        // console.log(errorCode);
         setErrorMessage(errorCode+"-"+error.message);
       });
     }
@@ -101,12 +95,13 @@ const Login = () => {
         <Header/>
         <div className='absolute'>
         <img
-        src='https://assets.nflxext.com/ffe/siteui/vlv3/d482944d-eab4-4a64-89c9-a07a508a6e42/web/IN-en-20250929-TRIFECTA-perspective_4cf0c8a1-bd35-4d72-a49f-165021531dde_large.jpg'
-        alt='logo'
+          className='h-screen object-cover md:object-fill md:w-screen'
+          src={BG_URL}
+          alt='logo'
         />
         </div>
        
-       <form onSubmit={(e)=>{e.preventDefault()}} className='w-3/12 p-12 absolute my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-75 bg-black'>
+       <form onSubmit={(e)=>{e.preventDefault()}} className='w-full md:w-3/12 p-12 absolute my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-75 bg-black'>
        <h1 className='font-bold text-3xl py-4'>{isSignInForm ? "Sign In" : "Sign Up"} </h1>
 
          {!isSignInForm &&   <input 
